@@ -108,7 +108,7 @@ export default Login;
 
 ```
 
-- We are using one function in the above to update our state based on the variable `e.currentTarget.name``` that gets its value from the ```name``` attribute on the form.  
+- We are using one function in the above to update our state based on the variable ```e.currentTarget.name``` that gets its value from the ```name``` attribute on the form.  
 We are using [computed Property Names](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names), which basically allows you to assign variables that can be calculated when updating the value of a property. Same thing as the es5 version below
 ```
 const someObject = {};
