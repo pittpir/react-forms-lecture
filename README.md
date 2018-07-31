@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Login/>}
+        <Login/>
       </div>
     );
   }
@@ -270,3 +270,35 @@ export default MainContainer;
 and set up our conditional render based on our ```logged``` variable using a 
 [ternary statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator), ternaries are often used instead of if/else in react. So what the following code is saying if ```this.state.logged``` is ```true``` render the ```MainContainer``` otherwise render the ```Login``` component.  Also notice we are passing down ```this.state.username``` as a prop stored under the attribute ```username``` to the ```MainContainer``` component.
 
+```
+import React, { Component } from 'react';
+import './App.css';
+import Login from './Login';
+
+class App extends Component {
+  constructor(){
+    super();
+
+    this.state = {
+      logged: false,
+      username: ''
+    }
+  }
+  login = (username) => {
+    this.setState({
+      logged: true,
+      username: username
+    })
+  }
+  render() {
+    console.log(this.state)
+    return (
+      <div className="App">
+        {this.state.logged ? <MainContainer username={this.state.username}/> : <Login login={this.login}/>}
+      </div>
+    );
+  }
+}
+
+export default App;
+```
