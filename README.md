@@ -26,7 +26,6 @@ react acts as the `Single Source of Truth`.  This means all the state of the for
 - In ```App``` Component 
 ```
 import React, { Component } from 'react';
-import './App.css';
 import Login from './Login';
 
 class App extends Component {
