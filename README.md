@@ -24,7 +24,7 @@ react acts as the `Single Source of Truth`.  This means all the state of the for
 - Your code should now look like the following 
 
 - In ```App``` Component 
-```
+```javascript
 import React, { Component } from 'react';
 import Login from './Login';
 
@@ -44,7 +44,7 @@ export default App;
 
 - In ```Login``` component 
 
-```
+```javascript
 import React, { Component } from 'react';
 
 
@@ -73,7 +73,7 @@ export default Login;
 so we will need to create a function that updates our state value, as well as create a state to represent the value of the inputs at any given time, so our ```Login``` component should now look like the following.
 
 
-```
+```javascript
 import React, { Component } from 'react';
 
 
@@ -122,7 +122,7 @@ Notice also we are using each state property in the value of our input, so that 
 - forms have an ```onSubmit``` attribute that gets triggered when we submit a form from a button or input.  We'll also create a function that will be called in the attribute, which will call a function we have yet to be defined that will be passed down from the ```App``` component.  Our ```Login``` component should now look like the following
 
 
-```
+```javascript
 import React, { Component } from 'react';
 
 
@@ -164,7 +164,7 @@ export default Login;
 - As you can see we are using the ```login``` method attached to ```this.props``` inside 
 of our ```handleSubmit``` function that is passed down from the app component.  Let's pass that down now, and lets actually invoke the function and pass whatever the user's username is to the function, so our ```Login``` component will now look like the following, 
 
-```
+```javascript
 import React, { Component } from 'react';
 
 class Login extends Component {
@@ -202,7 +202,7 @@ export default Login;
 
 and our ```App``` Component will now look like the following 
 
-```
+```javascript
 import React, { Component } from 'react';
 import './App.css';
 import Login from './Login';
@@ -246,7 +246,7 @@ part of the app, and inside of it another ```index.js```
 2.  Go ahead and setup the Component and render a message that says hello 'username'
 Your code should look like the following now.
 
-```
+```javascript
 import React, { Component } from 'react';
 
 
@@ -269,7 +269,7 @@ export default MainContainer;
 and set up our conditional render based on our ```logged``` variable using a 
 [ternary statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator), ternaries are often used instead of if/else in react. So what the following code is saying if ```this.state.logged``` is ```true``` render the ```MainContainer``` otherwise render the ```Login``` component.  Also notice we are passing down ```this.state.username``` as a prop stored under the attribute ```username``` to the ```MainContainer``` component.
 
-```
+```javascript
 import React, { Component } from 'react';
 import './App.css';
 import Login from './Login';
