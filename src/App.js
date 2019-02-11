@@ -1,35 +1,30 @@
-// bring in React and Component instance from react
-import React, {Component} from 'react'
+import React, { Component } from 'react';
+import Login from './Login/Login';
+import MainContainer from './MainContainer/MainContainer';
+import './App.css';
 
-// define our Hello component
-class Hello extends Component {
-  constructor (props) {
-    // make call to parent class' (Component) constructor
-    super()
-    // define an initial state
-    this.state = {
-      age: 5,
-      counter: 0
-    }
-  }
-  handleYearChangeOnClick = (event) => {
-  	this.setState({
-  		age: this.state.age + 1
-  	})
+
+class App extends Component {
+  state = {
+    logged: false,
+    username: ''
   }
 
-  // what should the component render
-  render () {
-    // Make sure to return some UI
+  login = (username) => {
+    this.setState({
+      logged: true,
+      username: username
+    })
+
+  }
+
+  render() {
     return (
-      <div>
-        <h1>Hello {this.props.name}</h1>
-        <p>You are {this.state.age} years old</p>
-        <p>The initial count is {this.state.counter}</p>
-        <button onClick={this.handleYearChangeOnClick}>Another Great Year</button>
+      <div className="App">
+      {this.state.logged ? <MainContainer username={this.state.username} /> : <Login login={this.login}/> }
       </div>
-    )
+    );
   }
 }
 
-export default Hello;
+export default App;
