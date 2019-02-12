@@ -7,7 +7,8 @@ import './App.css';
 class App extends Component {
   state = {
     logged: false,
-    username: ''
+    username: '',
+    horse: []
   }
 
   login = (username) => {
@@ -15,8 +16,8 @@ class App extends Component {
       logged: true,
       username: username
     })
-
   }
+
 
   render() {
     return (
